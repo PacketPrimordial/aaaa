@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exodus — Vouches</title>
+  <style>
+    :root{
+      --bg1:#0f1020; --bg2:#191a32; --bg3:#0a0b16;
+      --primary:#8de5ff; --accent:#b388ff; --soft:#96f7d2; --warn:#ffde59; --danger:#ff7a7a; --muted:#b4b6d1;
+      --card: rgba(255,255,255,.06); --card-strong: rgba(255,255,255,.12); --glass: rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    body{
+      margin:0; color:#e9ecff; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+      background: radial-gradient(1200px 800px at 10% 10%, #21204a 0%, transparent 60%),
+                  radial-gradient(1000px 1000px at 90% 0%, #24386b 0%, transparent 60%),
+                  linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size: 200% 200%;
+      animation: gradientShift 16s ease-in-out infinite;
+      min-height:100vh;
+    }
+    @keyframes gradientShift { 0%{background-position: 0% 50%} 50%{background-position: 100% 50%} 100%{background-position:0% 50%} }
+
+    .wrap{ max-width:900px; margin:0 auto; padding: clamp(20px, 4vw, 56px); }
+    header{ text-align:center; padding:40px 0; }
+    h1{ font-size: clamp(32px, 7vw, 72px); font-weight:900; margin:0; text-shadow: 0 0 12px rgba(141,229,255,.5); }
+
+    .vouch-list{ display:grid; gap:20px; margin-top:40px; }
+    .vouch{ background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:20px; box-shadow:var(--shadow); display:flex; gap:16px; align-items:flex-start; }
+    .vouch img{ width:56px; height:56px; border-radius:50%; object-fit:cover; box-shadow:0 0 8px rgba(0,0,0,.4); }
+    .vouch-content{ flex:1; }
+    .vouch strong{ color:var(--accent); display:block; margin-bottom:4px; font-size:15px; }
+    .vouch p{ margin:0; line-height:1.4; }
+
+    footer{ text-align:center; color: var(--muted); padding: 40px 6px 60px; font-size: 14px; }
+
+    .back-btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:12px 26px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--accent), var(--primary));
+      color:#fff; font-weight:bold; text-decoration:none;
+      box-shadow:0 0 12px rgba(179,136,255,.5), 0 0 20px rgba(141,229,255,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .back-btn:hover{ transform:scale(1.06); box-shadow:0 0 20px rgba(179,136,255,.8), 0 0 32px rgba(141,229,255,.7); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Vouches</h1>
+      <p class="subtitle">What our users are saying</p>
+    </header>
+
+    <section class="vouch-list">
+      <div class="vouch">
+        <img src="https://cdn.discordapp.com/avatars/1356769027493466283/006ef1b1bfff7a466bbc86f624d72567.png?size=1024" alt="PlayerOne">
+        <div class="vouch-content">
+          <strong>@herceeez_36218</strong>
+          <p>Exodus is the real deal. Fast updates and no downtime — 10/10.</p>
+        </div>
+      </div>
+
+
+    <div style="text-align:center;">
+      <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+    <footer>
+      <p>© <span id="year"></span> Exodus Team</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
