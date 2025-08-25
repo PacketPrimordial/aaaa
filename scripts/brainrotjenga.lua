@@ -26,7 +26,7 @@ local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local Player = game.Players.LocalPlayer
 local teleportToggle = false
-local targetPosition = Vector3.new(21.2713, 207.2023, -367.1447)
+local targetPosition = Vector3.new(0.0.0)
 
 local function tweenToPosition(position)
     if Player.Character and Player.Character:FindFirstChild("HumanoidRootPart") then
